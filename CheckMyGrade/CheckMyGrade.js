@@ -1,8 +1,6 @@
 document.querySelector('form').addEventListener('submit', checkGrade)
 
-console.log("Welcome");
-
-let grade= 81; 
+console.log("Welcome"); 
 
 const A=90;
 const B=89;
@@ -14,24 +12,33 @@ function checkGrade(e) {
     e.preventDefault() 
 
     let myGrade = document.querySelector('input').value;
+    let message = "";
+
     console.log('RUNNING ...' + myGrade);
+   
     if ( myGrade >= A){
-        console.log('You have an A');
+        message += '<li>You have an A</li>';
     }
 
     if ( myGrade < A && myGrade >= B){
-        console.log('You have a B');
+        message +='<li>You have a B</li>';
     }
 
     if (myGrade < B && myGrade >= C) {
-        console.log('You have a C');
+        message +='<li>You have a C</li>';
     }
 
 
     if (myGrade < C && myGrade >= D) {
-        console.log('you have a D');
+        message +='<li>you have a D</li>';
     }
-    if (myGrade < D && myGrade >= F) {
-        console.log('you have an F');
+    if (myGrade >F && myGrade <= D) {
+        message +='<li>you have a D</li>';
     }
+    if (myGrade <=F) {
+        message +='<li>you have an F</li>';
+    }
+    
+ message += '</ul>'
+    document.querySelector('#output').innerHTML = message;
 }
