@@ -4,9 +4,7 @@ console.log("Welcome");
 
 const A=90;
 const B=89;
-const BO=80;
 const C=79;
-const CO=70;
 const D=69;
 const DO=60;
 
@@ -36,7 +34,7 @@ function checkGrade(e) {
     }
     if (myGrade <=DO) {
         message +='<li>You have an F</li>';
-    
+
     }
     
  message += '</ul>'
